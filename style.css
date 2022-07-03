@@ -9,13 +9,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* min-height: 100vh; */
+    min-height: 20vh;
 }
 h1 {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+}
+#mainFrame{
+    padding: 0px 75px;
+}
+#submitBox{
+    justify-content: center;
+    align-items: center;
+
+}
+#titleBox{
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+}
+#algoIcon{
+    height: 45px;
+    margin: 0px 5px;
+}
+#algoInput{
+    height: 120px;
+    width: 300px;
 }
 svg {
     display: flex;
