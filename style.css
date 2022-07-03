@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#navBar{
+    background-color:  #0d69c5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+}
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+svg {
+    display: flex;
+    align-items: center;
+    font: 8.5em 'Noto';
+    width: 960px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+stroke: #df21e2;
+animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+stroke: #df21e2;
+animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+stroke: #df21e2;
+animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+stroke: #df21e2;
+animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+stroke: #df21e2;
+animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+100% {stroke-dashoffset: -35%;}
+}
