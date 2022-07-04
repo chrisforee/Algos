@@ -77,6 +77,42 @@ var y = [2,4,6];
 x[2] = y[x.length-3] + x[x[0] + y[0]];
 console.log(x);
 
+var x = [1,3,5];
+x[0] = x[2];
+x[1] = x[0];
+console.log(x);
+
+var x = [1,3,5,8];
+x[0] = x[x.length-1];
+console.log(x);
+
+var x = [1,3,5];
+var y = [0,5,7];
+x[0] = x[1] + y[2];
+y[1] =y[2] -x[0];
+console.log(x);
+
+var x = [1,3,5,8];
+var temp = x[x.length-1];
+x[x.length-1] = x[0];
+console.log(x);
+
+var x = [1,3,5,8];
+var temp = x[x.length-1];
+x[x.length-1] = x[0];
+x[0] = temp;
+console.log(x);
+
+var x = [1,3,5,8];
+x.pop();
+x.push(7);
+console.log(x);
+
+var x = [1,3,5];
+x[0] = 15;
+x[3] = 77;
+console.log(x);
+
 for(var i=1; i<100; i++)
 {
     if(i == 10)
