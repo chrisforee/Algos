@@ -1,5 +1,5 @@
 // Algos prcatice
-// Included in the websit
+// Included in the website
 
 // Level 1 
 
