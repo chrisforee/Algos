@@ -24,26 +24,19 @@ const expected3 = false;
  * @param {string} str
  * @returns {boolean} Whether the parenthesis are valid.
  */
-
-// function parensValid(str) 
-isValid = s => {
-    let newArr = []
-    for(var i = 0; i< s.length; i++){
-        let char = newArr[newArr.length -1]
-        if(s[i] == "(" || s[i] == "{" || s[i] == "["){
-            newArr.push(s[i]);
-        }else if((char =="(" && s[i] == ")") ||
-        (char =="{" && s[i] == "}") ||
-        (char =="[" && s[i] == "]")){
-            newArr.pop()
-        } else return false
+ function parensValid(str) {
+    let unmatchedOpens = 0;
+    for (let char of str){
+        if (char == "(") unmatchedOpens++
+        if (char == ")") unmatchedOpens--
+        if (unmatchedOpens < 0) return false
     }
-    return newArr.length ? false : true
+    return unmatchedOpens == 0;
 }
 
-console.log(isValid(str1)) // expected: true
-console.log(isValid(str2)) // expected: false
-console.log(isValid(str3)) // expected: false
+console.log(parensValid(str1)) // expected: true
+console.log(parensValid(str2)) // expected: false
+console.log(parensValid(str3)) // expected: false
 
 
 /* 
@@ -60,29 +53,32 @@ const expectedB = false;
 const strC = "A(1)s[O (n]0{t) 0}k";
 const expectedC = false;
 
-// /**
-//  * Determines whether the string's braces, brackets, and parenthesis are valid
-//  * based on the order and amount of opening and closing pairs.
-//  * - Time: O(?).
-//  * - Space: O(?).
-//  * @param {string} str
-//  * @returns {boolean} Whether the given strings braces are valid.
-//  */
-isValid = s => {
-    let newArr = []
-    for(var i = 0; i< str.length; i++){
-        let char = newArr[newArr.length -1]
-        if(s[i] == "(" || s[i] == "{" || s[i] == "["){
-            newArr.push(s[i]);
-        }else if((char =="(" && s[i] == ")") ||
-        (char =="{" && s[i] == "}") ||
-        (char =="[" && s[i] == "]")){
-            newArr.pop()
-        } else return false
+/**
+ * Determines whether the string's braces, brackets, and parenthesis are valid
+ * based on the order and amount of opening and closing pairs.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {string} str
+ * @returns {boolean} Whether the given strings braces are valid.
+ */
+function bracesValid(str) {
+    const stack = [];
+    const opens = "({[";
+    const closeToOpen = { ")": "(", "}": "{", "]": "[" };
+
+    for (let char of str) {
+        if (opens.includes(char)) {
+        stack.push(char);
+    } else if (closeToOpen[char]) {
+        if (closeToOpen[char] === stack[stack.length - 1]) {
+            stack.pop();
+        } else {
+            return false;
+        }
     }
-    return newArr.length ? false : true
 }
-// }
+    return stack.length === 0;
+}
 console.log(bracesValid(strA)) // expected: true
 console.log(bracesValid(strB)) // expected: false
 console.log(bracesValid(strC)) // expected: false
