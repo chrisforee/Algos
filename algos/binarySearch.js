@@ -34,7 +34,6 @@ const expected4 = 4;
  * @param {number} searchNum
  * @returns {boolean} Whether the given num exists in the given array.
  */
-function binarySearch(sortedNums, searchNum) {
     function binarySearch(sortedNums, searchNum) {
         let left_index = 0;
         let right_index = sortedNums.length - 1;
@@ -50,4 +49,3 @@ function binarySearch(sortedNums, searchNum) {
         }
         return false;
     }
-}
